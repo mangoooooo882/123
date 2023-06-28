@@ -5,6 +5,7 @@ export const command = new SlashCommandBuilder()
  .setDescription('ping command')
 
 
-export const action = async(ctx) => {
+
+ export const action = async(ctx) => {
    await ctx.reply('pong !')
  }
