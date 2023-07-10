@@ -10,7 +10,10 @@ const updateSlashComands = async(guildid,commands) => {
         '1100053764062322818'
     ),
     {
-        body: commands,
+        body:[
+         {name:'ping', description:'this is a ping slash command'}, 
+         {name:'pong', description:'this is a pong slash command'}
+        ]
     }
    )
 
@@ -24,7 +27,7 @@ export const loadCommands = async() => {
 
  for(const file of files) {
     const cmd = await import(file)
-    commands.push(cmd.commands)
+    commands.push(cmd.command)
  }
 
  await updateSlashComands(commands)
